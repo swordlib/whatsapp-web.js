@@ -8,6 +8,7 @@
     "test": "mocha tests --recursive --timeout 5000",
     "test-single": "mocha",
     "shell": "node --experimental-repl-await ./shell.js",
+    "build-web-sdk": "rollup --config ./web-sdk.rollup.config.js",
     "generate-docs": "npx jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
@@ -37,6 +38,9 @@
     "puppeteer": "^18.2.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "rollup": "^4.41.1",
     "@types/node-fetch": "^2.5.12",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
