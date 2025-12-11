@@ -451,7 +451,8 @@ class Message extends Base {
 
         const evaluate = async (msgId) => {
             const msg = window.Store.Msg.get(msgId) || (await window.Store.Msg.getMessagesById([msgId]))?.messages?.[0];
-            if (!msg || !msg.mediaData) {
+            // REUPLOADING mediaStage means the media is expired and the download button is spinning, cannot be downloaded now
+            if (!msg || !msg.mediaData || msg.mediaData.mediaStage === 'REUPLOADING') {
                 return null;
             }
             if (msg.mediaData.mediaStage != 'RESOLVED') {
