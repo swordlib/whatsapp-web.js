@@ -14,7 +14,7 @@ module.exports = {
             preferBuiltins: false,
         }),
         commonjs({
-            include: 'src/util/Injected/**'
+            // include: 'src/util/Injected/**'
         }),
     ]
 };

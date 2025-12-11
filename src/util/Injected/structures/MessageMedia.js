@@ -1,3 +1,4 @@
+// require node module just port from src/structures/MessageMedia.js for inject to browser
 
 /**
  * Media attached to a message
@@ -34,4 +35,4 @@ class MessageMedia {
     }
 }
 
-exports.MessageMedia = MessageMedia;
+module.exports = MessageMedia;
